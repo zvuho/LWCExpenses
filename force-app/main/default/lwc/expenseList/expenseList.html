@@ -1,3 +1,19 @@
 <template>
-    
+
+    <div class="flex-container">
+
+        <div class="flex-child magenta">
+            <lightning-card title="Expenses" icon-name="standard:account">
+                <div class="slds-m-around_medium">
+                    <template if:true={expenses.data}>
+                        <lightning-datatable 
+                        key-field="id" 
+                        data={expenses.data} 
+                        columns={columns}>
+                        </lightning-datatable>
+                    </template>
+                </div>
+            </lightning-card>
+        </div>
+    </div>
 </template>
