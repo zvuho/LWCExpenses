@@ -4,11 +4,19 @@ import EXPENSE_OBJECT from '@salesforce/schema/Expense__c';
 import Label_FIELD from '@salesforce/schema/Expense__c.Label__c';
 import Category_FIELD from '@salesforce/schema/Expense__c.Category__c';
 import Expense_date_FIELD from '@salesforce/schema/Expense__c.Expense_date__c';
-//import Amount_FIELD from '@salesforce/schema/Expense__c.Amount__c';
+import Amount_FIELD from '@salesforce/schema/Expense__c.Amount__c';
+import Recurrency_FIELD from '@salesforce/schema/Expense__c.Recurrency__c';
+import Times_FIELD from '@salesforce/schema/Expense__c.Times__c';
 
 export default class ExpenseCreator extends LightningElement {
     objectApiName = EXPENSE_OBJECT;
-    fields = [Label_FIELD, Category_FIELD, Expense_date_FIELD]; //, Amount_FIELD];
+    fields = [
+        Label_FIELD, 
+        Category_FIELD, 
+        Expense_date_FIELD, 
+        Recurrency_FIELD, 
+        Amount_FIELD, 
+        Times_FIELD];
     handleSuccess(event) {
         const toastEvent = new ShowToastEvent({
             title: "Expense created",
